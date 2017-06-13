@@ -1,30 +1,15 @@
 import React, { Component } from 'react';
-import $ from 'jquery-ajax';
+
 
 class Card extends Component {
-
-  componentDidMount(){
-    this.fetchData()
-  }
-
-  fetchData(){
-    $.ajax({
-        method: "GET",
-        url: "/api/entries",
-        success: (data) => console.log(data)
-      })
-  }
-
-
-
-  render() {
+    render() {
     return (
       <div className="row entry" data-index-id="">
         <div className="col-xs-12 col-sm-8 col-sm-offset-2 post-card">
           <div className="entryBody">
             <div className="row head">
               <div className="col-xs-8">
-                <h2 className="title">Title</h2>
+                <h2 className="title">{this.props.title}</h2>
               </div>
               <div className="co-xs-1 pull-right">
                 <p className="date-time">Date</p>
